@@ -1,0 +1,115 @@
+
+### Estructura de Respuesta de Peticion por Axios
+{
+    config: {},
+    data: {
+    posts: [],
+    ...
+    },
+    .... 
+}
+
+### Deconstruccion
+
+## Objetos
+
+usuario = {
+    nombre: 'Pepito',
+    correo: '',
+    direccion: '',
+    edad: 20
+}
+
+let edad = usuario.edad;
+
+funcion x(usuario){
+    const { nombre, edad } = usuario; 
+
+    const nombre = usuario.nombre;
+    const edad = usuario.edad;
+    
+    return nombre; 
+}
+
+## Arreglos
+funcion x([ x, y ]){
+    const [ x, y ] = coordenadas; 
+
+    const x = coordenadas[0];
+    const y = coordenadas[1];
+    
+    return x + y; 
+}
+
+
+[
+    {
+        title: "His mother had always taught him",
+        ...
+    },
+    {},
+    {}
+]
+
+
+
+### Rutas
+
+const rutas = createBrowserRouter([
+    // /padre/hijo-1/nieto
+    // /padre/hijo-1/nieto2
+
+    // /padre/hijo-2/nieto
+    // /padre/hijo-2/nieto2
+    {
+      path: 'padre',
+      element: <Plantilla />,
+      children: [
+        {
+          path: 'hijo-1',
+          element: <Plantilla />,
+          children: [
+            {
+              path: 'nieto'
+            },
+            {
+              path: 'nieto2'
+            },
+          ]
+        },
+        {
+          path: 'hijo-2',
+          element: <Plantilla />,
+          children: [
+            {
+              path: 'nieto'
+            },
+            {
+              path: 'nieto2'
+            },
+          ]
+        }
+      ]
+    },
+  ])
+
+### Respuestas de una API con Axios
+  {
+  // Informacion que se solicitó a la API
+  "data": {}
+  // Codigo: 200(OK), 404(NOT_FOUND), 500(CONFLICT)
+  "status": 200,
+  // Algun Mensaje Relacionado Al Status
+  "statusText": "",
+  // Contraseñas para usar la API
+  "headers":{}
+   // Configuracion de la Solucitud que se hizo 
+  "config": {}
+  // Solucitud que se hizo 
+  "request": {}
+}
+
+
+### Condicional ternario
+
+let resultado = condicion ? verdadero : falso 
